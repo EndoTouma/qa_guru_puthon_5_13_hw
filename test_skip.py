@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 from selene import browser
 
-@pytest.fixture(params=[(1920, 1080), (320, 240), (2560, 1440), (480, 360)],
+@pytest.fixture(params=[(1920, 1080), (320, 240), (1600, 1200), (480, 360)],
                 ids=['desktop', 'mobile', 'desktop', 'mobile'])
 def web_browser(request):
     chrome_options = webdriver.ChromeOptions()

@@ -6,7 +6,7 @@ from selene import browser
 """
 
 
-@pytest.fixture(params=[(1920, 1080), (1600, 1200), (360, 640), (320, 568)])
+@pytest.fixture(params=[(1920, 1080), (1600, 1200), (320, 240), (480, 360)])
 def web_browser(request):
     chrome_options = webdriver.ChromeOptions()
     browser.config.driver_options = chrome_options
@@ -22,7 +22,7 @@ def test_github_desktop(web_browser):
     browser.element('a.HeaderMenu-link--sign-in').click()
 
 
-@pytest.mark.parametrize('web_browser', [(360, 640), (320, 568)], indirect=True)
+@pytest.mark.parametrize('web_browser', [(320, 420), (480, 360)], indirect=True)
 def test_github_mobile(web_browser):
     browser.open('https://github.com/')
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()

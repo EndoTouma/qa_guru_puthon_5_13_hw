@@ -7,7 +7,7 @@ from selene import browser, by, be, have
 """
 
 
-@pytest.fixture(params=[(1920, 1080), (1600, 1200), (2650, 1440)])
+@pytest.fixture(params=[(1920, 1080), (1600, 1200)])
 def web_browser_for_github_desktop(request):
 	chrome_options = webdriver.ChromeOptions()
 	browser.config.driver_options = chrome_options
@@ -17,7 +17,7 @@ def web_browser_for_github_desktop(request):
 	browser.quit()
 
 
-@pytest.fixture(params=[(240, 320), (320, 568), (360, 640)])
+@pytest.fixture(params=[(320, 240), (480, 360)])
 def web_browser_for_github_mobile(request):
 	chrome_options = webdriver.ChromeOptions()
 	browser.config.driver_options = chrome_options
