@@ -16,7 +16,7 @@ def web_browser(request):
     browser.quit()
 
 
-@pytest.mark.parametrize('web_browser', [(1920, 1080), (1600, 1200),], indirect=True)
+@pytest.mark.parametrize('web_browser', [(1920, 1080), (1600, 1200)], indirect=True)
 def test_github_desktop(web_browser):
     browser.open('https://github.com/')
     browser.element('a.HeaderMenu-link--sign-in').click()
@@ -26,4 +26,4 @@ def test_github_desktop(web_browser):
 def test_github_mobile(web_browser):
     browser.open('https://github.com/')
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()
-    browser.element('a.HeaderMenu-link[href="/pricing"]').click()
+    browser.element('a.HeaderMenu-link--sign-in').click()

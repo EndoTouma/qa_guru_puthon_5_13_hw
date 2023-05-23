@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from selene import browser, by, be, have
+from selene import browser
 
 """
 Сделайте разные фикстуры для каждого теста, которые выставят размеры окна браузера
@@ -35,4 +35,4 @@ def test_github_desktop(web_browser_for_desktop):
 def test_github_mobile(web_browser_for_mobile):
     browser.open('https://github.com/')
     browser.element('.flex-column [aria-label="Toggle navigation"]').click()
-    browser.element('a.HeaderMenu-link[href="/pricing"]').click()
+    browser.element('a.HeaderMenu-link--sign-in').click()
